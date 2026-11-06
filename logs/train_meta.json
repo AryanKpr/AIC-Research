@@ -1,0 +1,15 @@
+{
+  "train_seed": 1191607972,
+  "epochs": 5,
+  "batch": 128,
+  "lr": 0.001,
+  "acc_fp32": 0.9752999544143677,
+  "acc_study_precision": 0.9752999544143677,
+  "commit": "ff41595123c499113e9bef07eab79ab1b29fd418",
+  "uncommitted_changes": true,
+  "master_seed": 20261104,
+  "device": "Tesla T4",
+  "dtype": "torch.float16",
+  "torch": "2.11.0+cu130",
+  "numpy": "2.4.6"
+}
