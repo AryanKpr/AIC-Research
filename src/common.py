@@ -106,7 +106,7 @@ def run_metadata():
             return "unknown"
     return {
         "commit": git("rev-parse", "HEAD"),
-        "uncommitted_changes": git("status", "--porcelain") != "",
+        "uncommitted_changes": git("status", "--porcelain", "--", "src") != "",
         "master_seed": MASTER,
         "device": torch.cuda.get_device_name(0) if DEVICE == "cuda" else "cpu",
         "dtype": str(DTYPE),
