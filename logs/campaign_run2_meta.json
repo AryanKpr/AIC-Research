@@ -1,0 +1,12 @@
+{
+  "tag": "run2",
+  "faults": 4800,
+  "golden_accuracy": 0.9752999544143677,
+  "commit": "1e2133a009150cc37908a1bda626882ca9f2c0d2",
+  "uncommitted_changes": false,
+  "master_seed": 20261104,
+  "device": "Tesla T4",
+  "dtype": "torch.float16",
+  "torch": "2.11.0+cu130",
+  "numpy": "2.4.6"
+}
