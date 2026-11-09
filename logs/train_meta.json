@@ -5,11 +5,11 @@
   "lr": 0.001,
   "acc_fp32": 0.9752999544143677,
   "acc_study_precision": 0.9752999544143677,
-  "commit": "ff41595123c499113e9bef07eab79ab1b29fd418",
-  "uncommitted_changes": true,
+  "commit": "663d567cebd2f1ff98ae5cc794344588bcd30810",
+  "uncommitted_changes": false,
   "master_seed": 20261104,
   "device": "Tesla T4",
   "dtype": "torch.float16",
-  "torch": "2.11.0+cu130",
+  "torch": "2.14.1+cu130",
   "numpy": "2.4.6"
 }
