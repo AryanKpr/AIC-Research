@@ -26,7 +26,7 @@
     "momentum": 0.9,
     "weight_decay": 0.0005,
     "schedule": "cosine, per step",
-    "minutes": 3.6
+    "minutes": 3.7
   },
   "seeds": {
     "master": 20261104,
@@ -45,9 +45,9 @@
   "parameters": 288170,
   "conv_weight_share": 0.9924,
   "weights_file": "models/vgg_fmnist_fp32.pt",
-  "weights_sha256": "08eb74db51630a0c6939ebde1f9ac6e2c148ccfc590994e4deb59d3f8b4938ba",
-  "acc_fp32": 0.936,
-  "acc_fp16": 0.9361,
+  "weights_sha256": "41bb17a5b5bc26b5cbcbcb3e80a9d43c807d05c8adf7425b284a171d8056765d",
+  "acc_fp32": 0.9375,
+  "acc_fp16": 0.9376,
   "device": "Tesla T4",
   "versions": {
     "python": "3.13.16",
@@ -57,6 +57,6 @@
     "cuda": "13.0",
     "cudnn": 92800
   },
-  "commit": "c08480dcf3b2ea83a282fc745d661b97ec24b6e4",
+  "commit": "5672a0b782b5c1c00de8553808ad47080085d586",
   "uncommitted_changes": false
 }
