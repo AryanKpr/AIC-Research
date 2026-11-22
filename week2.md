@@ -31,7 +31,10 @@ weights and their SHA-256 are the reference; later scripts load them through
 
 Training: SGD (lr 0.1, momentum 0.9, weight decay 5e-4), batch 128, cosine learning-rate
 decay. Full metadata: `logs/train_vgg_fmnist.json`, `logs/train_vgg_cifar10.json`.
-Trained at commit `TODO`.
+Trained at commits `5672a0b` (Fashion-MNIST) and `940cbc0` (CIFAR-10).
+
+Each network was retrained once after the first weights were lost: Fashion-MNIST on Nov 19
+and CIFAR-10 on Nov 22. The hashes above are the current reference.
 
 ### Reproduce
 ```bash
