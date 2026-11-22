@@ -25,9 +25,9 @@ weights and their SHA-256 are the reference; later scripts load them through
 | Augmentation | none | random crop (pad 4) + horizontal flip |
 | Normalization mean | 0.2860 | 0.4914, 0.4822, 0.4465 |
 | Normalization std | 0.3530 | 0.2470, 0.2435, 0.2616 |
-| FP32 test accuracy | 93.60% | 89.30% |
-| FP16 test accuracy | 93.61% | 89.30% |
-| Weights SHA-256 | `TODO` | `TODO` |
+| FP32 test accuracy | 93.75% | 89.38% |
+| FP16 test accuracy | 93.76% | 89.37% |
+| Weights SHA-256 | `41bb17a5b5bc26b5cbcbcb3e80a9d43c807d05c8adf7425b284a171d8056765d` | `a60d257c4d2e68ac4531edc44b66eb6351f1d6a93ff80edd132141f4fba4a288` |
 
 Training: SGD (lr 0.1, momentum 0.9, weight decay 5e-4), batch 128, cosine learning-rate
 decay. Full metadata: `logs/train_vgg_fmnist.json`, `logs/train_vgg_cifar10.json`.
