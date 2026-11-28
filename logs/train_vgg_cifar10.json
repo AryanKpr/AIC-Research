@@ -1,0 +1,66 @@
+{
+  "model": "vgg",
+  "dataset": "cifar10",
+  "dataset_detail": "torchvision CIFAR10, 3 channel(s), 32x32, 10,000 test images",
+  "normalization": {
+    "mean": [
+      0.4914,
+      0.4822,
+      0.4465
+    ],
+    "std": [
+      0.247,
+      0.2435,
+      0.2616
+    ],
+    "computed_from": "training set, float64, rounded to 4 decimals"
+  },
+  "loader": {
+    "batch_size": 128,
+    "shuffle": true,
+    "num_workers": 2,
+    "drop_last": false,
+    "augmentation": "RandomCrop(pad 4) + RandomHorizontalFlip",
+    "eval_batch_size": 1000
+  },
+  "training": {
+    "epochs": 30,
+    "optimizer": "SGD",
+    "lr": 0.1,
+    "momentum": 0.9,
+    "weight_decay": 0.0005,
+    "schedule": "cosine, per step",
+    "minutes": 9.0
+  },
+  "seeds": {
+    "master": 20261104,
+    "training_seed": 1358819710,
+    "training_spawn_key": [
+      4,
+      0,
+      1
+    ],
+    "sampling_spawn_key": [
+      5,
+      0,
+      1
+    ]
+  },
+  "parameters": 288746,
+  "conv_weight_share": 0.9924,
+  "weights_file": "models/vgg_cifar10_fp32.pt",
+  "weights_sha256": "a60d257c4d2e68ac4531edc44b66eb6351f1d6a93ff80edd132141f4fba4a288",
+  "acc_fp32": 0.8938,
+  "acc_fp16": 0.8937,
+  "device": "Tesla T4",
+  "versions": {
+    "python": "3.13.16",
+    "torch": "2.14.1+cu130",
+    "torchvision": "0.29.1+cu130",
+    "numpy": "2.4.6",
+    "cuda": "13.0",
+    "cudnn": 92800
+  },
+  "commit": "940cbc0b4fe3d8a7d512fc236cb99a6ed93cb227",
+  "uncommitted_changes": false
+}

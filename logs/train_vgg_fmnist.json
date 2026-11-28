@@ -1,0 +1,62 @@
+{
+  "model": "vgg",
+  "dataset": "fmnist",
+  "dataset_detail": "torchvision FashionMNIST, 1 channel(s), 28x28, 10,000 test images",
+  "normalization": {
+    "mean": [
+      0.286
+    ],
+    "std": [
+      0.353
+    ],
+    "computed_from": "training set, float64, rounded to 4 decimals"
+  },
+  "loader": {
+    "batch_size": 128,
+    "shuffle": true,
+    "num_workers": 2,
+    "drop_last": false,
+    "augmentation": "none",
+    "eval_batch_size": 1000
+  },
+  "training": {
+    "epochs": 15,
+    "optimizer": "SGD",
+    "lr": 0.1,
+    "momentum": 0.9,
+    "weight_decay": 0.0005,
+    "schedule": "cosine, per step",
+    "minutes": 3.7
+  },
+  "seeds": {
+    "master": 20261104,
+    "training_seed": 1938730673,
+    "training_spawn_key": [
+      4,
+      0,
+      0
+    ],
+    "sampling_spawn_key": [
+      5,
+      0,
+      0
+    ]
+  },
+  "parameters": 288170,
+  "conv_weight_share": 0.9924,
+  "weights_file": "models/vgg_fmnist_fp32.pt",
+  "weights_sha256": "41bb17a5b5bc26b5cbcbcb3e80a9d43c807d05c8adf7425b284a171d8056765d",
+  "acc_fp32": 0.9375,
+  "acc_fp16": 0.9376,
+  "device": "Tesla T4",
+  "versions": {
+    "python": "3.13.16",
+    "torch": "2.14.1+cu130",
+    "torchvision": "0.29.1+cu130",
+    "numpy": "2.4.6",
+    "cuda": "13.0",
+    "cudnn": 92800
+  },
+  "commit": "5672a0b782b5c1c00de8553808ad47080085d586",
+  "uncommitted_changes": false
+}
