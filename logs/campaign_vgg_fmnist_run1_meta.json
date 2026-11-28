@@ -1,0 +1,58 @@
+{
+  "model": "vgg",
+  "dataset": "fmnist",
+  "tag": "run1",
+  "faults": 11200,
+  "elements_per_layer": 100,
+  "batch_norm_targets": false,
+  "layers": {
+    "conv1": {
+      "tensor": "features.0.weight",
+      "numel": 288,
+      "sampled": 100
+    },
+    "conv2": {
+      "tensor": "features.3.weight",
+      "numel": 9216,
+      "sampled": 100
+    },
+    "conv3": {
+      "tensor": "features.7.weight",
+      "numel": 18432,
+      "sampled": 100
+    },
+    "conv4": {
+      "tensor": "features.10.weight",
+      "numel": 36864,
+      "sampled": 100
+    },
+    "conv5": {
+      "tensor": "features.14.weight",
+      "numel": 73728,
+      "sampled": 100
+    },
+    "conv6": {
+      "tensor": "features.17.weight",
+      "numel": 147456,
+      "sampled": 100
+    },
+    "fc": {
+      "tensor": "fc.weight",
+      "numel": 1280,
+      "sampled": 100
+    }
+  },
+  "golden_acc_fp16": 0.9375999569892883,
+  "weights_sha256": "41bb17a5b5bc26b5cbcbcb3e80a9d43c807d05c8adf7425b284a171d8056765d",
+  "master_seed": 20261104,
+  "sampling_role": 5,
+  "device": "Tesla T4",
+  "versions": {
+    "torch": "2.14.1+cu130",
+    "torchvision": "0.29.1+cu130",
+    "numpy": "2.4.6",
+    "cuda": "13.0"
+  },
+  "commit": "ecd7cdc437d24ee74bcd3b5388ae1a729f6f4452",
+  "uncommitted_changes": false
+}
