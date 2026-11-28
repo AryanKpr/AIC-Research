@@ -48,6 +48,13 @@ def load(d):
     return pd.read_csv(os.path.join(LOGS, f"campaign_{arch}_{d}_{tag}.csv"))
 
 
+def yerr(s, cls):
+    """Asymmetric Wilson error bars. Clipped at 0: at a share of exactly 0 or 1 the interval
+    edge can land a rounding error (~1e-16) on the wrong side of the point."""
+    p = s[f"{cls}_share"]
+    return np.clip(np.vstack([p - s[f"{cls}_lo"], s[f"{cls}_hi"] - p]), 0, None)
+
+
 def per_bit_axes(ax, s, nbits, title, legend=True):
     exp_lo = 10 if nbits == 16 else 23
     ax.axvspan(-0.5, exp_lo - 0.5, color="tab:green", alpha=0.07, label="mantissa")
@@ -55,7 +62,7 @@ def per_bit_axes(ax, s, nbits, title, legend=True):
     ax.axvspan(nbits - 1.5, nbits - 0.5, color="tab:purple", alpha=0.07, label="sign")
     for cls, color, shift in [("SDC", "tab:blue", -0.12), ("non-finite", "tab:red", 0.12)]:
         p = s[f"{cls}_share"]
-        ax.errorbar(s["bit"] + shift, p, yerr=[p - s[f"{cls}_lo"], s[f"{cls}_hi"] - p],
+        ax.errorbar(s["bit"] + shift, p, yerr=yerr(s, cls),
                     fmt="o", ms=3, color=color, capsize=2, lw=1, label=cls)
     ax.set_xlim(nbits - 0.5, -0.5); ax.set_ylim(-0.02, 1.02)
     ax.set_xticks(range(nbits)); ax.tick_params(labelsize=7); ax.set_title(title, fontsize=9)
@@ -131,7 +138,7 @@ if all(os.path.exists(p) for p in paths.values()):
         for (d, label), color, shift in zip(DATA_NAMES.items(), ["tab:green", "tab:purple"], [-0.12, 0.12]):
             s = summarize(load(d), ["bit"])
             p = s[f"{cls}_share"]
-            ax.errorbar(s["bit"] + shift, p, yerr=[p - s[f"{cls}_lo"], s[f"{cls}_hi"] - p],
+            ax.errorbar(s["bit"] + shift, p, yerr=yerr(s, cls),
                         fmt="o", ms=4, capsize=2, color=color, label=label)
         ax.set_xlim(nbits - 0.5, -0.5); ax.set_xticks(range(nbits)); ax.set_ylim(-0.02, 1.02)
         ax.set_xlabel("bit position"); ax.set_title(f"{cls} share, all layers pooled"); ax.legend()
